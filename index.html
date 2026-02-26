@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>napisy.ai — Napisy SRT do wideo w jakości premium</title>
-  <meta name="description" content="Napisy SRT do filmów i podcastów: szybkie, dokładne, gotowe pod YouTube i SEO. Wyślij link lub plik, dostaniesz napisy i eksport." />
+  <title>napisy.ai — Transkrypcja audio i wideo + napisy SRT</title>
+  <meta name="description" content="Transkrypcja audio i wideo w jakości premium. Zamień podcast, film lub webinar w gotowy tekst, napisy SRT/VTT i treści pod SEO." />
+  <meta name="theme-color" content="#0b0f17" />
   <style>
     :root{
       --bg:#0b0f17; --card:#111827; --muted:#a7b0c0; --text:#eaf0ff;
@@ -13,9 +14,10 @@
     *{box-sizing:border-box}
     body{
       margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      background: radial-gradient(900px 450px at 20% 10%, rgba(124,58,237,.25), transparent 60%),
-                  radial-gradient(900px 450px at 80% 0%, rgba(34,197,94,.18), transparent 55%),
-                  var(--bg);
+      background:
+        radial-gradient(900px 450px at 20% 10%, rgba(124,58,237,.25), transparent 60%),
+        radial-gradient(900px 450px at 80% 0%, rgba(34,197,94,.18), transparent 55%),
+        var(--bg);
       color:var(--text);
     }
     a{color:inherit}
@@ -26,8 +28,11 @@
     nav{display:flex; gap:14px; color:var(--muted); font-size:14px}
     nav a{text-decoration:none; padding:8px 10px; border-radius:10px}
     nav a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    @media (max-width: 900px){ nav{display:none} }
+
     .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:22px; padding:34px 0 10px}
-    @media (max-width: 900px){ .hero{grid-template-columns:1fr} nav{display:none} }
+    @media (max-width: 900px){ .hero{grid-template-columns:1fr} }
+
     h1{font-size:44px; line-height:1.05; margin:0 0 12px}
     .sub{font-size:16px; color:var(--muted); margin:0 0 18px; line-height:1.6}
     .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin:18px 0 0}
@@ -63,11 +68,14 @@
       background:rgba(124,58,237,.2); border:1px solid rgba(124,58,237,.35); font-weight:800}
     .price{display:flex; align-items:baseline; gap:10px; margin:8px 0 0}
     .price .big{font-size:26px; font-weight:900}
+    .hr{height:1px; background:var(--line); margin:18px 0}
+    .taglist{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .tag{border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:12px; color:var(--muted); background:rgba(0,0,0,.10)}
+
     footer{padding:26px 0 10px; color:var(--muted); font-size:13px; border-top:1px solid var(--line); margin-top:26px}
     .smalllinks{display:flex; gap:14px; flex-wrap:wrap; margin-top:10px}
     .smalllinks a{color:var(--muted); text-decoration:none}
     .smalllinks a:hover{color:var(--text)}
-    .hr{height:1px; background:var(--line); margin:18px 0}
   </style>
 </head>
 
@@ -80,7 +88,8 @@
       </div>
       <nav>
         <a href="#jakto">Jak to działa</a>
-        <a href="#dlaczego">Dlaczego</a>
+        <a href="#dlakogo">Dla kogo</a>
+        <a href="#oferta">Oferta</a>
         <a href="#cennik">Cennik</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
@@ -90,31 +99,38 @@
     <section class="hero">
       <div>
         <span class="pill">⚡ Szybko • 🎯 Dokładnie • 📈 Pod SEO</span>
-        <h1>Napisy SRT do wideo<br/>w jakości premium</h1>
+        <h1>Transkrypcja audio i wideo<br/>w jakości premium</h1>
         <p class="sub">
-          Robię napisy do filmów, podcastów i materiałów szkoleniowych.
-          Dostajesz <b>SRT</b>, poprawną interpunkcję, podział na linie i timing —
-          gotowe do wrzucenia na YouTube / platformy.
+          Zamień podcast, film lub webinar w <b>gotowy tekst</b>, <b>napisy SRT/VTT</b>
+          i treści pod SEO. Dostajesz czytelne akapity, poprawną interpunkcję,
+          oraz dopracowany timing — gotowe do publikacji.
         </p>
 
         <div class="ctaRow">
-          <a class="btn primary" href="#kontakt">Zamów napisy</a>
-          <a class="btn" href="#jakto">Zobacz jak to działa</a>
+          <a class="btn primary" href="#kontakt">Zamów transkrypcję</a>
+          <a class="btn" href="#dlakogo">Zobacz zastosowania</a>
         </div>
 
         <div class="kpi">
           <div class="mini">
             <div class="n">99%+</div>
-            <div class="t">jakości bez korekty</div>
+            <div class="t">dokładności bez korekty</div>
           </div>
           <div class="mini">
-            <div class="n">SRT</div>
-            <div class="t">formaty eksportu</div>
+            <div class="n">Tekst + SRT/VTT</div>
+            <div class="t">transkrypcja i napisy</div>
           </div>
           <div class="mini">
-            <div class="n">PL / EN</div>
-            <div class="t">język + znaki</div>
+            <div class="n">SEO-ready</div>
+            <div class="t">treści, które pracują</div>
           </div>
+        </div>
+
+        <div class="taglist">
+          <span class="tag">YouTube / Podcast</span>
+          <span class="tag">Kursy / Webinary</span>
+          <span class="tag">Blog / Ebook</span>
+          <span class="tag">PL / EN</span>
         </div>
       </div>
 
@@ -124,27 +140,30 @@
           Wyślij link (YouTube/Drive) albo plik. Odpiszę z ceną i terminem.
         </p>
         <div class="hr"></div>
+
         <div class="step">
           <div class="num">1</div>
           <div>
             <b>Materiał</b>
-            <div class="muted">link lub plik + język</div>
+            <div class="muted">link lub plik + język + opcje</div>
           </div>
         </div>
         <div style="height:10px"></div>
+
         <div class="step">
           <div class="num">2</div>
           <div>
-            <b>Napisy</b>
-            <div class="muted">SRT + poprawki</div>
+            <b>Transkrypcja</b>
+            <div class="muted">tekst + struktura (opcjonalnie)</div>
           </div>
         </div>
         <div style="height:10px"></div>
+
         <div class="step">
           <div class="num">3</div>
           <div>
-            <b>Dostawa</b>
-            <div class="muted">gotowy plik + opcjonalne wersje</div>
+            <b>Napisy</b>
+            <div class="muted">SRT/VTT + dopracowany timing</div>
           </div>
         </div>
 
@@ -155,23 +174,50 @@
       </div>
     </section>
 
-    <section id="dlaczego" class="grid3">
+    <section id="dlakogo" class="grid3">
       <div class="card">
-        <div class="h2">📈 SEO i zasięgi</div>
+        <div class="h2">🎙 Podcasty i YouTube</div>
         <div class="muted">
-          Napisy zwiększają “treść” filmu — lepiej dla wyszukiwarki i widzów (cisza, metro, praca).
+          Transkrypcja odcinków, napisy SRT/VTT, opisy i treści pod SEO.
+          Idealne do publikacji, archiwum i repurpose.
         </div>
       </div>
       <div class="card">
-        <div class="h2">🎯 Czytelny timing</div>
+        <div class="h2">🎓 Kursy i szkolenia</div>
         <div class="muted">
-          Dobre łamanie linii, interpunkcja i spójne segmenty — bez “ściany tekstu”.
+          Zamień nagrania w czytelny materiał: akapity, nagłówki, rozdziały.
+          Ułatwia budowę poradników i dokumentacji.
         </div>
       </div>
       <div class="card">
-        <div class="h2">⚡ Szybka realizacja</div>
+        <div class="h2">📝 Blog / Ebook / Notatki</div>
         <div class="muted">
-          Krótki czas dostawy + możliwość ekspresu (ustalane indywidualnie).
+          Gotowy tekst do artykułów, ebooków, postów i checklist.
+          Treść z audio zaczyna “pracować” w wielu kanałach.
+        </div>
+      </div>
+    </section>
+
+    <section id="oferta" class="grid3">
+      <div class="card">
+        <div class="h2">Transkrypcja</div>
+        <div class="muted">
+          Tekst z poprawną interpunkcją, akapity, czytelny zapis. Możliwa wersja
+          “bardziej dosłowna” lub “wygładzona”.
+        </div>
+      </div>
+      <div class="card">
+        <div class="h2">Struktura treści</div>
+        <div class="muted">
+          Nagłówki, podział tematyczny, wyróżnienia. Dobre pod blog, poradnik,
+          ebook, opis odcinka i rozdziały.
+        </div>
+      </div>
+      <div class="card">
+        <div class="h2">Napisy premium</div>
+        <div class="muted">
+          SRT/VTT z dopracowanym timingiem i łamaniem linii — gotowe do YouTube
+          i playerów. To dodatek do transkrypcji, albo osobna usługa.
         </div>
       </div>
     </section>
@@ -192,8 +238,8 @@
           <div class="step">
             <div class="num">2</div>
             <div>
-              <b>Robię napisy</b>
-              <div class="muted">transkrypcja + dopracowany timing</div>
+              <b>Robię transkrypcję</b>
+              <div class="muted">tekst + opcjonalna struktura</div>
             </div>
           </div>
         </div>
@@ -201,8 +247,8 @@
           <div class="step">
             <div class="num">3</div>
             <div>
-              <b>Dostarczam SRT</b>
-              <div class="muted">gotowe do wrzucenia na YouTube/Player</div>
+              <b>Dostarczam pliki</b>
+              <div class="muted">TXT/DOCX + SRT/VTT (jeśli chcesz napisy)</div>
             </div>
           </div>
         </div>
@@ -212,7 +258,7 @@
     <section id="cennik" class="grid3">
       <div class="card">
         <div class="h2">Basic</div>
-        <div class="muted">SRT, poprawna interpunkcja, dokładny timing.</div>
+        <div class="muted">Transkrypcja + interpunkcja + czytelne akapity.</div>
         <div class="price">
           <div class="big">30 zł</div>
           <div class="muted">/ 1 godz. nagrania</div>
@@ -221,22 +267,22 @@
           Dla prostych materiałów, jedna osoba mówiąca.
         </div>
       </div>
-    
+
       <div class="card" style="border-color: rgba(124,58,237,.45)">
         <div class="h2">Pro</div>
-        <div class="muted">Lepsze łamanie linii, styl, nazwy własne.</div>
+        <div class="muted">Lepsza struktura: nagłówki, podział tematyczny, nazwy własne.</div>
         <div class="price">
           <div class="big">40 zł</div>
           <div class="muted">/ 1 godz. nagrania</div>
         </div>
         <div class="muted" style="margin-top:10px">
-          Najczęstszy wybór pod YouTube i podcasty.
+          Najczęstszy wybór pod YouTube, podcasty i kursy.
         </div>
       </div>
-    
+
       <div class="card">
         <div class="h2">Pro+</div>
-        <div class="muted">Wersja językowa, korekta, ekspres.</div>
+        <div class="muted">Transkrypcja + napisy SRT/VTT + korekta/ekspres (opcjonalnie).</div>
         <div class="price">
           <div class="big">50 zł</div>
           <div class="muted">/ 1 godz. nagrania</div>
@@ -245,35 +291,35 @@
           Materiały trudne: wiele osób, dynamiczne rozmowy.
         </div>
       </div>
-      <div style="margin-top:20px; text-align:center;" class="muted">
-        Cena liczona za długość materiału źródłowego. 
-        Przy większych zleceniach możliwa wycena indywidualna.
-      </div>
     </section>
 
-    <section id="kontakt" class="card">
+    <div class="muted" style="margin-top:6px">
+      Cena liczona za długość materiału źródłowego. Przy większych zleceniach możliwa wycena indywidualna.
+    </div>
+
+    <section id="kontakt" class="card" style="margin-top:22px">
       <div class="h2">Kontakt / zamówienie</div>
       <p class="muted" style="margin-top:0">
-        Na start najprościej: mail + link do materiału. Formularz dodamy zaraz potem (Pages Functions).
+        Na start najprościej: mail + link do materiału. Formularz dodamy w kolejnym kroku.
       </p>
 
       <div class="grid3" style="margin-top:10px">
         <div>
           <b>Email</b><br/>
-          <span class="muted">kamil-ait@pm.me</span>
+          <span class="muted">TU_WSTAW_EMAIL</span>
         </div>
         <div>
-          <b>Preferowane</b><br/>
-          <span class="muted">link YouTube/Drive + język + “czy ma być dosłownie”</span>
+          <b>Wyślij</b><br/>
+          <span class="muted">link YouTube/Drive lub plik + język + wybrany pakiet</span>
         </div>
         <div>
           <b>Format</b><br/>
-          <span class="muted">SRT (na życzenie inne)</span>
+          <span class="muted">TXT / DOCX + opcjonalnie SRT / VTT</span>
         </div>
       </div>
 
       <div class="ctaRow" style="margin-top:16px">
-        <a class="btn primary" href="mailto:TU_WSTAW_EMAIL?subject=Napisy.ai%20—%20wycena&body=Cze%C5%9B%C4%87!%0A%0ATu%20link%20do%20materia%C5%82u%3A%20%0A%C4%98zyk%3A%20PL%2FEN%0AD%C5%82ugo%C5%9B%C4%87%3A%20%0AUwagi%3A%20%0A">
+        <a class="btn primary" href="mailto:TU_WSTAW_EMAIL?subject=napisy.ai%20—%20wycena%20transkrypcji&body=Cze%C5%9B%C4%87!%0A%0ATu%20link%20do%20materia%C5%82u%3A%20%0AD%C5%82ugo%C5%9B%C4%87%3A%20%0AJ%C4%99zyk%3A%20PL%2FEN%0APakiet%3A%20Basic%2FPro%2FPro%2B%0ACzy%20potrzebujesz%20napis%C3%B3w%20SRT%2FVTT%3F%20tak%2Fnie%0AUwagi%3A%20%0A">
           Napisz maila
         </a>
         <a class="btn" href="#jakto">Jak to działa</a>
