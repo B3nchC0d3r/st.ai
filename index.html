@@ -1,132 +1,289 @@
 <!doctype html>
 <html lang="pl">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>napisy.ai — Transkrypcja nagrań i napisy do filmów</title>
   <meta name="description"
-        content="Transkrypcja audio i wideo + profesjonalne napisy SRT. Zamień nagranie w czytelny tekst do publikacji i dopracowane napisy gotowe do YouTube." />
+    content="Transkrypcja audio i wideo + profesjonalne napisy SRT. Zamień nagranie w czytelny tekst do publikacji i dopracowane napisy gotowe do YouTube." />
   <meta name="theme-color" content="#0b0f17" />
   <style>
-    :root{
-      --bg:#0b0f17;
-      --text:#eaf0ff;
-      --muted:#a7b0c0;
-      --line:rgba(255,255,255,.08);
-      --brand:#7c3aed;
-      --brand2:#22c55e;
-      --cardGrad: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+    :root {
+      --bg: #0b0f17;
+      --text: #eaf0ff;
+      --muted: #a7b0c0;
+      --line: rgba(255, 255, 255, .08);
+      --brand: #7c3aed;
+      --brand2: #22c55e;
+      --cardGrad: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .03));
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color:var(--text);
+      color: var(--text);
       background:
-        radial-gradient(900px 450px at 18% 10%, rgba(124,58,237,.28), transparent 60%),
-        radial-gradient(900px 450px at 82% 0%, rgba(34,197,94,.18), transparent 55%),
+        radial-gradient(900px 450px at 18% 10%, rgba(124, 58, 237, .28), transparent 60%),
+        radial-gradient(900px 450px at 82% 0%, rgba(34, 197, 94, .18), transparent 55%),
         var(--bg);
     }
-    a{color:inherit}
-    .wrap{max-width:1100px; margin:0 auto; padding:24px}
 
-    header{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:16px; padding:10px 0;
-    }
-    .logo{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.2px}
-    .badge{font-size:12px; color:var(--muted); border:1px solid var(--line); padding:4px 10px; border-radius:999px}
-
-    nav{display:flex; gap:14px; color:var(--muted); font-size:14px}
-    nav a{text-decoration:none; padding:8px 10px; border-radius:10px}
-    nav a:hover{background:rgba(255,255,255,.06); color:var(--text)}
-    @media (max-width: 900px){ nav{display:none} }
-
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 16px; border-radius:14px; border:1px solid var(--line);
-      text-decoration:none; font-weight:800; font-size:14px;
-      background:rgba(255,255,255,.04);
-    }
-    .btn:hover{background:rgba(255,255,255,.08)}
-    .btn.primary{
-      background:linear-gradient(135deg, rgba(124,58,237,.95), rgba(34,197,94,.75));
-      border:0;
-    }
-    .btn.primary:hover{filter:brightness(1.05)}
-
-    .card{
-      background:var(--cardGrad);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:18px;
-    }
-    .muted{color:var(--muted); line-height:1.65; font-size:14px}
-    .h2{font-size:20px; margin:0 0 10px}
-    .pill{
-      display:inline-flex; gap:8px; align-items:center;
-      border:1px solid var(--line);
-      padding:7px 10px; border-radius:999px;
-      color:var(--muted); font-size:12px;
-      background:rgba(0,0,0,.10)
+    a {
+      color: inherit
     }
 
-    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:18px 0}
-    @media (max-width: 900px){ .grid3{grid-template-columns:1fr} }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: .2px
+    }
+
+    .badge {
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 4px 10px;
+      border-radius: 999px
+    }
+
+    nav {
+      display: flex;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 14px
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 10px
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, .06);
+      color: var(--text)
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        display: none
+      }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 14px;
+      background: rgba(255, 255, 255, .04);
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, .08)
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, rgba(124, 58, 237, .95), rgba(34, 197, 94, .75));
+      border: 0;
+    }
+
+    .btn.primary:hover {
+      filter: brightness(1.05)
+    }
+
+    .card {
+      background: var(--cardGrad);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .muted {
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px
+    }
+
+    .h2 {
+      font-size: 20px;
+      margin: 0 0 10px
+    }
+
+    .pill {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      border: 1px solid var(--line);
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      background: rgba(0, 0, 0, .10)
+    }
+
+    .grid3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 18px 0
+    }
+
+    @media (max-width: 900px) {
+      .grid3 {
+        grid-template-columns: 1fr
+      }
+    }
 
     /* HERO — teraz 1 kolumna, bez prawego boxa */
-    .hero{
-      padding:30px 0 10px;
+    .hero {
+      padding: 30px 0 10px;
       max-width: 720px;
     }
-    h1{font-size:48px; line-height:1.05; margin:10px 0 12px}
-    .sub{font-size:16px; margin:0; color:var(--muted); line-height:1.65}
-    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin:18px 0 0}
 
-    .kpis{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
-    .kpi{
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:8px 12px;
-      font-size:12px;
-      color:var(--muted);
-      background:rgba(0,0,0,.10);
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
+    h1 {
+      font-size: 48px;
+      line-height: 1.05;
+      margin: 10px 0 12px
     }
 
-    .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:10px}
-    @media (max-width: 900px){ .steps{grid-template-columns:1fr} }
-    .step{display:flex; gap:12px}
-    .num{
-      width:28px; height:28px; border-radius:10px;
-      display:flex; align-items:center; justify-content:center;
-      background:rgba(124,58,237,.18);
-      border:1px solid rgba(124,58,237,.35);
-      font-weight:900;
-      flex:0 0 28px;
-      margin-top:2px;
+    .sub {
+      font-size: 16px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65
     }
 
-    .priceRow{display:flex; align-items:baseline; gap:10px; margin:10px 0 0}
-    .big{font-size:28px; font-weight:950}
-    .note{margin-top:8px; font-size:13px; color:var(--muted)}
-    .highlight{
-      border-color: rgba(124,58,237,.45);
-      box-shadow: 0 0 0 1px rgba(124,58,237,.10) inset;
+    .ctaRow {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 18px 0 0
     }
 
-    footer{
-      padding:26px 0 10px;
-      color:var(--muted);
-      font-size:13px;
-      border-top:1px solid var(--line);
-      margin-top:26px;
+    .kpis {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px
     }
-    .smalllinks{display:flex; gap:14px; flex-wrap:wrap; margin-top:10px}
-    .smalllinks a{color:var(--muted); text-decoration:none}
-    .smalllinks a:hover{color:var(--text)}
+
+    .kpi {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 12px;
+      color: var(--muted);
+      background: rgba(0, 0, 0, .10);
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 10px
+    }
+
+    @media (max-width: 900px) {
+      .steps {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .step {
+      display: flex;
+      gap: 12px
+    }
+
+    .num {
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(124, 58, 237, .18);
+      border: 1px solid rgba(124, 58, 237, .35);
+      font-weight: 900;
+      flex: 0 0 28px;
+      margin-top: 2px;
+    }
+
+    .priceRow {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin: 10px 0 0
+    }
+
+    .big {
+      font-size: 28px;
+      font-weight: 950
+    }
+
+    .note {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--muted)
+    }
+
+    .highlight {
+      border-color: rgba(124, 58, 237, .45);
+      box-shadow: 0 0 0 1px rgba(124, 58, 237, .10) inset;
+    }
+
+    footer {
+      padding: 26px 0 10px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+      margin-top: 26px;
+    }
+
+    .smalllinks {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 10px
+    }
+
+    .smalllinks a {
+      color: var(--muted);
+      text-decoration: none
+    }
+
+    .smalllinks a:hover {
+      color: var(--text)
+    }
   </style>
 </head>
 
@@ -149,7 +306,7 @@
     <!-- HERO -->
     <section class="hero" id="top">
       <span class="pill">⚡ Szybko • 🎯 Dokładnie • 📈 Pod SEO</span>
-      <h1>Transkrypcja nagrań<br/>i napisy do filmów</h1>
+      <h1>Transkrypcja nagrań<br />i napisy do filmów</h1>
       <p class="sub">
         Zamień audio lub wideo w czytelny tekst do publikacji oraz profesjonalne napisy SRT
         z dopracowanym timingiem i łamaniem linii — gotowe do YouTube i playerów.
@@ -284,22 +441,22 @@
 
       <div class="grid3" style="margin-top:10px">
         <div>
-          <b>Email</b><br/>
+          <b>Email</b><br />
           <span class="muted">TU_WSTAW_EMAIL</span>
         </div>
         <div>
-          <b>Co wysłać</b><br/>
+          <b>Co wysłać</b><br />
           <span class="muted">link/plik + długość + język + pakiet</span>
         </div>
         <div>
-          <b>Co dostaniesz</b><br/>
+          <b>Co dostaniesz</b><br />
           <span class="muted">TXT/DOCX + SRT</span>
         </div>
       </div>
 
       <div class="ctaRow" style="margin-top:16px">
         <a class="btn primary"
-           href="mailto:TU_WSTAW_EMAIL?subject=napisy.ai%20—%20wycena%20transkrypcji%20%2B%20napis%C3%B3w&body=Cze%C5%9B%C4%87!%0A%0ATu%20link%20do%20materia%C5%82u%3A%20%0AD%C5%82ugo%C5%9B%C4%87%3A%20%0AJ%C4%99zyk%3A%20PL%2FEN%2FGB%0APakiet%3A%20Basic%2FPro%2FPro%2B%0ACzy%20chcesz%20napisy%20SRT%3F%20tak%2Fnie%0AUwagi%3A%20%0A">
+          href="mailto:TU_WSTAW_EMAIL?subject=napisy.ai%20—%20wycena%20transkrypcji%20%2B%20napis%C3%B3w&body=Cze%C5%9B%C4%87!%0A%0ATu%20link%20do%20materia%C5%82u%3A%20%0AD%C5%82ugo%C5%9B%C4%87%3A%20%0AJ%C4%99zyk%3A%20PL%2FEN%2FGB%0APakiet%3A%20Basic%2FPro%2FPro%2B%0ACzy%20chcesz%20napisy%20SRT%3F%20tak%2Fnie%0AUwagi%3A%20%0A">
           Napisz maila
         </a>
         <a class="btn" href="#top">Wróć na górę</a>
@@ -320,4 +477,5 @@
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
+
 </html>
