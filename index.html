@@ -2,473 +2,445 @@
 <html lang="pl">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>napisy.ai — Transkrypcja nagrań i napisy do filmów</title>
-  <meta name="description"
-    content="Transkrypcja audio i wideo + profesjonalne napisy SRT. Zamień nagranie w czytelny tekst do publikacji i dopracowane napisy gotowe do YouTube." />
-  <meta name="theme-color" content="#0b0f17" />
-  <style>
-    :root {
-      --bg: #0b0f17;
-      --text: #eaf0ff;
-      --muted: #a7b0c0;
-      --line: rgba(255, 255, 255, .08);
-      --brand: #7c3aed;
-      --brand2: #22c55e;
-      --cardGrad: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .03));
-    }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>napisy.ai — Transkrypcja nagrań i napisy do filmów</title>
+    <meta name="description"
+        content="Transkrypcja audio i wideo + profesjonalne napisy SRT. Zamień nagranie w czytelny tekst do publikacji i dopracowane napisy gotowe do YouTube." />
+    <meta name="theme-color" content="#0b0f17" />
+    <style>
+        :root {
+            --bg: #0b0f17;
+            --text: #eaf0ff;
+            --muted: #a7b0c0;
+            --line: rgba(255, 255, 255, .08);
+            --brand: #7c3aed;
+            --brand2: #22c55e;
+            --cardGrad: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .03));
+        }
 
-    * {
-      box-sizing: border-box
-    }
+        * {
+            box-sizing: border-box
+        }
 
-    body {
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color: var(--text);
-      background:
-        radial-gradient(900px 450px at 18% 10%, rgba(124, 58, 237, .28), transparent 60%),
-        radial-gradient(900px 450px at 82% 0%, rgba(34, 197, 94, .18), transparent 55%),
-        var(--bg);
-    }
+        body {
+            margin: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+            color: var(--text);
+            background:
+                radial-gradient(900px 450px at 18% 10%, rgba(124, 58, 237, .28), transparent 60%),
+                radial-gradient(900px 450px at 82% 0%, rgba(34, 197, 94, .18), transparent 55%),
+                var(--bg);
+        }
 
-    a {
-      color: inherit
-    }
+        a {
+            color: inherit
+        }
 
-    .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 24px
-    }
+        .wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px
+        }
 
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 10px 0;
-    }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 10px 0;
+        }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 900;
-      letter-spacing: .2px
-    }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 900;
+            letter-spacing: .2px
+        }
 
-    .badge {
-      font-size: 12px;
-      color: var(--muted);
-      border: 1px solid var(--line);
-      padding: 4px 10px;
-      border-radius: 999px
-    }
+        .badge {
+            font-size: 12px;
+            color: var(--muted);
+            border: 1px solid var(--line);
+            padding: 4px 10px;
+            border-radius: 999px
+        }
 
-    nav {
-      display: flex;
-      gap: 14px;
-      color: var(--muted);
-      font-size: 14px
-    }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 16px;
+            border-radius: 14px;
+            border: 1px solid var(--line);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 14px;
+            background: rgba(255, 255, 255, .04);
+        }
 
-    nav a {
-      text-decoration: none;
-      padding: 8px 10px;
-      border-radius: 10px
-    }
+        .btn:hover {
+            background: rgba(255, 255, 255, .08)
+        }
 
-    nav a:hover {
-      background: rgba(255, 255, 255, .06);
-      color: var(--text)
-    }
+        .btn.primary {
+            background: linear-gradient(135deg, rgba(124, 58, 237, .95), rgba(34, 197, 94, .75));
+            border: 0;
+        }
 
-    @media (max-width: 900px) {
-      nav {
-        display: none
-      }
-    }
+        .btn.primary:hover {
+            filter: brightness(1.05)
+        }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px 16px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 14px;
-      background: rgba(255, 255, 255, .04);
-    }
+        .card {
+            background: var(--cardGrad);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 18px;
+        }
 
-    .btn:hover {
-      background: rgba(255, 255, 255, .08)
-    }
+        .muted {
+            color: var(--muted);
+            line-height: 1.65;
+            font-size: 14px
+        }
 
-    .btn.primary {
-      background: linear-gradient(135deg, rgba(124, 58, 237, .95), rgba(34, 197, 94, .75));
-      border: 0;
-    }
+        .h2 {
+            font-size: 20px;
+            margin: 0 0 10px
+        }
 
-    .btn.primary:hover {
-      filter: brightness(1.05)
-    }
+        .pill {
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+            border: 1px solid var(--line);
+            padding: 7px 10px;
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 12px;
+            background: rgba(0, 0, 0, .10)
+        }
 
-    .card {
-      background: var(--cardGrad);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
-    }
+        .grid3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin: 18px 0
+        }
 
-    .muted {
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 14px
-    }
+        @media (max-width: 900px) {
+            .grid3 {
+                grid-template-columns: 1fr
+            }
+        }
 
-    .h2 {
-      font-size: 20px;
-      margin: 0 0 10px
-    }
+        /* HERO — pełna szerokość kontenera (bez limitów) */
+        .hero {
+            padding: 30px 0 10px;
+        }
 
-    .pill {
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
-      border: 1px solid var(--line);
-      padding: 7px 10px;
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 12px;
-      background: rgba(0, 0, 0, .10)
-    }
+        h1 {
+            font-size: 54px;
+            line-height: 1.05;
+            margin: 10px 0 12px;
+            /* USUNIĘTE: max-width */
+        }
 
-    .grid3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin: 18px 0
-    }
+        .sub {
+            font-size: 18px;
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.7;
+            /* USUNIĘTE: max-width */
+        }
 
-    @media (max-width: 900px) {
-      .grid3 {
-        grid-template-columns: 1fr
-      }
-    }
+        .ctaRow {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 18px 0 0
+        }
 
-    /* HERO — teraz 1 kolumna, bez prawego boxa */
-    .hero {
-      padding: 30px 0 10px;
-      max-width: 720px;
-    }
+        .kpis {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px
+        }
 
-    h1 {
-      font-size: 50px;
-      line-height: 1.05;
-      margin: 10px 0 12px;
-      max-width: 22ch;
-      /* kontroluje łamanie (ładnie, nie na ślepo) */
-    }
+        .kpi {
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 8px 12px;
+            font-size: 12px;
+            color: var(--muted);
+            background: rgba(0, 0, 0, .10);
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+        }
 
-    .sub {
-      font-size: 18px;
-      /* było 16px */
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 70ch;
-      /* czytelność – szerokość tekstu */
-    }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 10px
+        }
 
-    .ctaRow {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin: 18px 0 0
-    }
+        @media (max-width: 900px) {
+            .steps {
+                grid-template-columns: 1fr
+            }
+        }
 
-    .kpis {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px
-    }
+        .step {
+            display: flex;
+            gap: 12px
+        }
 
-    .kpi {
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 8px 12px;
-      font-size: 12px;
-      color: var(--muted);
-      background: rgba(0, 0, 0, .10);
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
-    }
+        .num {
+            width: 28px;
+            height: 28px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(124, 58, 237, .18);
+            border: 1px solid rgba(124, 58, 237, .35);
+            font-weight: 900;
+            flex: 0 0 28px;
+            margin-top: 2px;
+        }
 
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 10px
-    }
+        .priceRow {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin: 10px 0 0
+        }
 
-    @media (max-width: 900px) {
-      .steps {
-        grid-template-columns: 1fr
-      }
-    }
+        .big {
+            font-size: 28px;
+            font-weight: 950
+        }
 
-    .step {
-      display: flex;
-      gap: 12px
-    }
+        .note {
+            margin-top: 8px;
+            font-size: 13px;
+            color: var(--muted)
+        }
 
-    .num {
-      width: 28px;
-      height: 28px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(124, 58, 237, .18);
-      border: 1px solid rgba(124, 58, 237, .35);
-      font-weight: 900;
-      flex: 0 0 28px;
-      margin-top: 2px;
-    }
+        .highlight {
+            border-color: rgba(124, 58, 237, .45);
+            box-shadow: 0 0 0 1px rgba(124, 58, 237, .10) inset;
+        }
 
-    .priceRow {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin: 10px 0 0
-    }
+        footer {
+            padding: 26px 0 10px;
+            color: var(--muted);
+            font-size: 13px;
+            border-top: 1px solid var(--line);
+            margin-top: 26px;
+        }
 
-    .big {
-      font-size: 28px;
-      font-weight: 950
-    }
+        .smalllinks {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 10px
+        }
 
-    .note {
-      margin-top: 8px;
-      font-size: 13px;
-      color: var(--muted)
-    }
+        .smalllinks a {
+            color: var(--muted);
+            text-decoration: none
+        }
 
-    .highlight {
-      border-color: rgba(124, 58, 237, .45);
-      box-shadow: 0 0 0 1px rgba(124, 58, 237, .10) inset;
-    }
-
-    footer {
-      padding: 26px 0 10px;
-      color: var(--muted);
-      font-size: 13px;
-      border-top: 1px solid var(--line);
-      margin-top: 26px;
-    }
-
-    .smalllinks {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 10px
-    }
-
-    .smalllinks a {
-      color: var(--muted);
-      text-decoration: none
-    }
-
-    .smalllinks a:hover {
-      color: var(--text)
-    }
-  </style>
+        .smalllinks a:hover {
+            color: var(--text)
+        }
+    </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo">
-        <span style="font-size:18px">napisy.ai</span>
-        <span class="badge">beta</span>
-      </div>
-    </header>
+    <div class="wrap">
+        <header>
+            <div class="logo">
+                <span style="font-size:18px">napisy.ai</span>
+                <span class="badge">beta</span>
+            </div>
+        </header>
 
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <span class="pill">⚡ Szybko • 🎯 Dokładnie • 📈 Pod SEO</span>
-      <h1>Transkrypcja nagrań i napisy do filmów</h1>
-      <p class="sub">
-        Zamieniam audio i wideo w czytelny tekst do publikacji oraz profesjonalne napisy SRT
-        z dopracowanym timingiem i łamaniem linii — gotowe do YouTube i playerów.
-      </p>
+        <!-- HERO -->
+        <section class="hero" id="top">
+            <span class="pill">⚡ Szybko • 🎯 Dokładnie • 📈 Pod SEO</span>
+            <h1>Transkrypcja nagrań i napisy do filmów</h1>
+            <p class="sub">
+                Zamieniam audio i wideo w czytelny tekst do publikacji oraz profesjonalne napisy SRT
+                z dopracowanym timingiem i łamaniem linii — gotowe do YouTube i playerów.
+            </p>
 
-      <div class="kpis">
-        <span class="kpi">✅ 99%+ dokładności</span>
-        <span class="kpi">🧾 TXT/DOCX + SRT</span>
-        <span class="kpi">🔎 Czytelne akapity</span>
-        <span class="kpi">🌍 Języki: PL / EN / GB</span>
-      </div>
-    </section>
+            <div class="kpis">
+                <span class="kpi">✅ 99%+ dokładności</span>
+                <span class="kpi">🧾 TXT/DOCX + SRT</span>
+                <span class="kpi">🔎 Czytelne akapity</span>
+                <span class="kpi">🌍 Języki: PL / EN / GB</span>
+            </div>
+        </section>
 
-    <!-- WHAT YOU GET -->
-    <section id="co" class="grid3">
-      <div class="card">
-        <div class="h2">📝 Transkrypcja do publikacji</div>
-        <div class="muted">
-          Czytelny tekst: interpunkcja, akapity, sensowny zapis.
-          Możliwa wersja “bardziej dosłowna” albo “wygładzona”.
-        </div>
-      </div>
-      <div class="card">
-        <div class="h2">🧠 Struktura treści (opcjonalnie)</div>
-        <div class="muted">
-          Nagłówki, podział tematyczny, wyróżnienia.
-          Idealne pod blog, poradnik, ebook, opis odcinka.
-        </div>
-      </div>
-      <div class="card">
-        <div class="h2">🎬 Napisy premium SRT</div>
-        <div class="muted">
-          Dopracowany timing i łamanie linii — gotowe do YouTube i playerów.
-          To pełnoprawny produkt: czytelne, spójne i bez “ściany tekstu”.
-        </div>
-      </div>
-    </section>
+        <!-- WHAT YOU GET -->
+        <section id="co" class="grid3">
+            <div class="card">
+                <div class="h2">📝 Transkrypcja do publikacji</div>
+                <div class="muted">
+                    Czytelny tekst: interpunkcja, akapity, sensowny zapis.
+                    Możliwa wersja “bardziej dosłowna” albo “wygładzona”.
+                </div>
+            </div>
+            <div class="card">
+                <div class="h2">🧠 Struktura treści (opcjonalnie)</div>
+                <div class="muted">
+                    Nagłówki, podział tematyczny, wyróżnienia.
+                    Idealne pod blog, poradnik, ebook, opis odcinka.
+                </div>
+            </div>
+            <div class="card">
+                <div class="h2">🎬 Napisy premium SRT</div>
+                <div class="muted">
+                    Dopracowany timing i łamanie linii — gotowe do YouTube i playerów.
+                    To pełnoprawny produkt: czytelne, spójne i bez “ściany tekstu”.
+                </div>
+            </div>
+        </section>
 
-    <!-- USE CASES -->
-    <section class="grid3" aria-label="Zastosowania">
-      <div class="card">
-        <div class="h2">🎙 Podcast / YouTube</div>
-        <div class="muted">Opis odcinka, artykuł z rozmowy, SEO, napisy do filmu.</div>
-      </div>
-      <div class="card">
-        <div class="h2">🎓 Kurs / Webinar</div>
-        <div class="muted">Rozdziały, materiały dla uczestników, dokumentacja szkolenia.</div>
-      </div>
-      <div class="card">
-        <div class="h2">📚 Blog / Ebook / Notatki</div>
-        <div class="muted">Repurpose treści: jeden materiał → wiele formatów.</div>
-      </div>
-    </section>
+        <!-- USE CASES -->
+        <section class="grid3" aria-label="Zastosowania">
+            <div class="card">
+                <div class="h2">🎙 Podcast / YouTube</div>
+                <div class="muted">Opis odcinka, artykuł z rozmowy, SEO, napisy do filmu.</div>
+            </div>
+            <div class="card">
+                <div class="h2">🎓 Kurs / Webinar</div>
+                <div class="muted">Rozdziały, materiały dla uczestników, dokumentacja szkolenia.</div>
+            </div>
+            <div class="card">
+                <div class="h2">📚 Blog / Ebook / Notatki</div>
+                <div class="muted">Repurpose treści: jeden materiał → wiele formatów.</div>
+            </div>
+        </section>
 
-    <!-- HOW IT WORKS -->
-    <section id="jak" class="card">
-      <div class="h2">Jak to działa</div>
-      <div class="steps">
-        <div class="step">
-          <div class="num">1</div>
-          <div>
-            <b>Wysyłasz materiał</b>
-            <div class="muted">link lub plik + język + pakiet</div>
-          </div>
-        </div>
-        <div class="step">
-          <div class="num">2</div>
-          <div>
-            <b>Robię transkrypcję / napisy</b>
-            <div class="muted">tekst + opcjonalna struktura + SRT</div>
-          </div>
-        </div>
-        <div class="step">
-          <div class="num">3</div>
-          <div>
-            <b>Dostarczam pliki</b>
-            <div class="muted">TXT/DOCX + SRT</div>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- HOW IT WORKS -->
+        <section id="jak" class="card">
+            <div class="h2">Jak to działa</div>
+            <div class="steps">
+                <div class="step">
+                    <div class="num">1</div>
+                    <div>
+                        <b>Wysyłasz materiał</b>
+                        <div class="muted">link lub plik + język + pakiet</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="num">2</div>
+                    <div>
+                        <b>Robię transkrypcję / napisy</b>
+                        <div class="muted">tekst + opcjonalna struktura + SRT</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="num">3</div>
+                    <div>
+                        <b>Dostarczam pliki</b>
+                        <div class="muted">TXT/DOCX + SRT</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- PRICING -->
-    <section id="cennik" class="grid3">
-      <div class="card">
-        <div class="h2">Basic</div>
-        <div class="muted">Transkrypcja + interpunkcja + czytelne akapity.</div>
-        <div class="priceRow">
-          <div class="big">30 zł</div>
-          <div class="muted">/ 1 godz. nagrania</div>
-        </div>
-        <div class="note">Dla prostych materiałów, jedna osoba mówiąca.</div>
-      </div>
+        <!-- PRICING -->
+        <section id="cennik" class="grid3">
+            <div class="card">
+                <div class="h2">Basic</div>
+                <div class="muted">Transkrypcja + interpunkcja + czytelne akapity.</div>
+                <div class="priceRow">
+                    <div class="big">30 zł</div>
+                    <div class="muted">/ 1 godz. nagrania</div>
+                </div>
+                <div class="note">Dla prostych materiałów, jedna osoba mówiąca.</div>
+            </div>
 
-      <div class="card highlight">
-        <div class="h2">Pro</div>
-        <div class="muted">Lepsza struktura + podział tematyczny.</div>
-        <div class="priceRow">
-          <div class="big">40 zł</div>
-          <div class="muted">/ 1 godz. nagrania</div>
-        </div>
-        <div class="note">Najczęstszy wybór pod YouTube, podcasty i kursy.</div>
-      </div>
+            <div class="card highlight">
+                <div class="h2">Pro</div>
+                <div class="muted">Lepsza struktura + podział tematyczny.</div>
+                <div class="priceRow">
+                    <div class="big">40 zł</div>
+                    <div class="muted">/ 1 godz. nagrania</div>
+                </div>
+                <div class="note">Najczęstszy wybór pod YouTube, podcasty i kursy.</div>
+            </div>
 
-      <div class="card">
-        <div class="h2">Pro+</div>
-        <div class="muted">Transkrypcja + napisy SRT + korekta/ekspres (opcjonalnie).</div>
-        <div class="priceRow">
-          <div class="big">50 zł</div>
-          <div class="muted">/ 1 godz. nagrania</div>
-        </div>
-        <div class="note">Materiały trudne: wiele osób, dynamiczne rozmowy.</div>
-      </div>
-    </section>
+            <div class="card">
+                <div class="h2">Pro+</div>
+                <div class="muted">Transkrypcja + napisy SRT + korekta/ekspres (opcjonalnie).</div>
+                <div class="priceRow">
+                    <div class="big">50 zł</div>
+                    <div class="muted">/ 1 godz. nagrania</div>
+                </div>
+                <div class="note">Materiały trudne: wiele osób, dynamiczne rozmowy.</div>
+            </div>
+        </section>
 
-    <div class="muted" style="margin-top:6px">
-      Cena liczona za długość materiału źródłowego. Przy większych zleceniach możliwa wycena indywidualna.
+        <div class="muted" style="margin-top:6px">
+            Cena liczona za długość materiału źródłowego. Przy większych zleceniach możliwa wycena indywidualna.
+        </div>
+
+        <!-- CONTACT -->
+        <section id="kontakt" class="card" style="margin-top:22px">
+            <div class="h2">Kontakt / zamówienie</div>
+            <p class="muted" style="margin-top:0">
+                Na start: mail + link do materiału. W treści dopisz język i pakiet.
+                Jeśli chcesz napisy SRT — napisz to wprost.
+            </p>
+
+            <div class="grid3" style="margin-top:10px">
+                <div>
+                    <b>Email</b><br />
+                    <span class="muted">TU_WSTAW_EMAIL</span>
+                </div>
+                <div>
+                    <b>Co wysłać</b><br />
+                    <span class="muted">link/plik + długość + język + pakiet</span>
+                </div>
+                <div>
+                    <b>Co dostaniesz</b><br />
+                    <span class="muted">TXT/DOCX + SRT</span>
+                </div>
+            </div>
+
+            <div class="ctaRow" style="margin-top:16px">
+                <a class="btn primary"
+                    href="mailto:TU_WSTAW_EMAIL?subject=napisy.ai%20—%20wycena%20transkrypcji%20%2B%20napis%C3%B3w&body=Cze%C5%9B%C4%87!%0A%0ATu%20link%20do%20materia%C5%82u%3A%20%0AD%C5%82ugo%C5%9B%C4%87%3A%20%0AJ%C4%99zyk%3A%20PL%2FEN%2FGB%0APakiet%3A%20Basic%2FPro%2FPro%2B%0ACzy%20chcesz%20napisy%20SRT%3F%20tak%2Fnie%0AUwagi%3A%20%0A">
+                    Napisz maila
+                </a>
+                <a class="btn" href="#top">Wróć na górę</a>
+            </div>
+        </section>
+
+        <footer>
+            <div>© <span id="y"></span> napisy.ai — wersja robocza</div>
+            <div class="smalllinks">
+                <a href="#">Polityka prywatności</a>
+                <a href="#">Regulamin</a>
+                <a href="#kontakt">Kontakt</a>
+            </div>
+        </footer>
     </div>
 
-    <!-- CONTACT (only CTA) -->
-    <section id="kontakt" class="card" style="margin-top:22px">
-      <div class="h2">Kontakt / zamówienie</div>
-      <p class="muted" style="margin-top:0">
-        Na start: mail + link do materiału. W treści dopisz język i pakiet.
-        Jeśli chcesz napisy SRT — napisz to wprost.
-      </p>
-
-      <div class="grid3" style="margin-top:10px">
-        <div>
-          <b>Email</b><br />
-          <span class="muted">TU_WSTAW_EMAIL</span>
-        </div>
-        <div>
-          <b>Co wysłać</b><br />
-          <span class="muted">link/plik + długość + język + pakiet</span>
-        </div>
-        <div>
-          <b>Co dostaniesz</b><br />
-          <span class="muted">TXT/DOCX + SRT</span>
-        </div>
-      </div>
-
-      <div class="ctaRow" style="margin-top:16px">
-        <a class="btn primary"
-          href="mailto:TU_WSTAW_EMAIL?subject=napisy.ai%20—%20wycena%20transkrypcji%20%2B%20napis%C3%B3w&body=Cze%C5%9B%C4%87!%0A%0ATu%20link%20do%20materia%C5%82u%3A%20%0AD%C5%82ugo%C5%9B%C4%87%3A%20%0AJ%C4%99zyk%3A%20PL%2FEN%2FGB%0APakiet%3A%20Basic%2FPro%2FPro%2B%0ACzy%20chcesz%20napisy%20SRT%3F%20tak%2Fnie%0AUwagi%3A%20%0A">
-          Napisz maila
-        </a>
-        <a class="btn" href="#top">Wróć na górę</a>
-      </div>
-    </section>
-
-    <footer>
-      <div>© <span id="y"></span> napisy.ai — wersja robocza</div>
-      <div class="smalllinks">
-        <a href="#">Polityka prywatności</a>
-        <a href="#">Regulamin</a>
-        <a href="#kontakt">Kontakt</a>
-      </div>
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+    <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
