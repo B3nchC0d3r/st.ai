@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>napisy.ai — Napisy SRT do wideo w jakości premium</title>
+  <meta name="description" content="Napisy SRT do filmów i podcastów: szybkie, dokładne, gotowe pod YouTube i SEO. Wyślij link lub plik, dostaniesz napisy i eksport." />
+  <style>
+    :root{
+      --bg:#0b0f17; --card:#111827; --muted:#a7b0c0; --text:#eaf0ff;
+      --brand:#7c3aed; --brand2:#22c55e; --line:rgba(255,255,255,.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: radial-gradient(900px 450px at 20% 10%, rgba(124,58,237,.25), transparent 60%),
+                  radial-gradient(900px 450px at 80% 0%, rgba(34,197,94,.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+    }
+    a{color:inherit}
+    .wrap{max-width:1100px; margin:0 auto; padding:24px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 0}
+    .logo{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px}
+    .badge{font-size:12px; color:var(--muted); border:1px solid var(--line); padding:4px 10px; border-radius:999px}
+    nav{display:flex; gap:14px; color:var(--muted); font-size:14px}
+    nav a{text-decoration:none; padding:8px 10px; border-radius:10px}
+    nav a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:22px; padding:34px 0 10px}
+    @media (max-width: 900px){ .hero{grid-template-columns:1fr} nav{display:none} }
+    h1{font-size:44px; line-height:1.05; margin:0 0 12px}
+    .sub{font-size:16px; color:var(--muted); margin:0 0 18px; line-height:1.6}
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin:18px 0 0}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px; border-radius:14px; border:1px solid var(--line);
+      text-decoration:none; font-weight:700; font-size:14px;
+      background:rgba(255,255,255,.04);
+    }
+    .btn:hover{background:rgba(255,255,255,.08)}
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(124,58,237,.95), rgba(34,197,94,.75));
+      border:0;
+    }
+    .btn.primary:hover{filter:brightness(1.05)}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:18px; padding:18px;
+    }
+    .kpi{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px}
+    .kpi .mini{padding:12px; border:1px solid var(--line); border-radius:14px; background:rgba(0,0,0,.12)}
+    .kpi .n{font-size:18px; font-weight:800}
+    .kpi .t{font-size:12px; color:var(--muted); margin-top:2px}
+    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:22px 0}
+    @media (max-width: 900px){ .grid3{grid-template-columns:1fr} .kpi{grid-template-columns:1fr} }
+    .h2{font-size:20px; margin:0 0 10px}
+    .muted{color:var(--muted); line-height:1.65; font-size:14px}
+    .pill{display:inline-flex; gap:8px; align-items:center; border:1px solid var(--line);
+      padding:7px 10px; border-radius:999px; color:var(--muted); font-size:12px}
+    .step{display:flex; gap:12px}
+    .num{width:28px; height:28px; border-radius:10px; display:flex; align-items:center; justify-content:center;
+      background:rgba(124,58,237,.2); border:1px solid rgba(124,58,237,.35); font-weight:800}
+    .price{display:flex; align-items:baseline; gap:10px; margin:8px 0 0}
+    .price .big{font-size:26px; font-weight:900}
+    footer{padding:26px 0 10px; color:var(--muted); font-size:13px; border-top:1px solid var(--line); margin-top:26px}
+    .smalllinks{display:flex; gap:14px; flex-wrap:wrap; margin-top:10px}
+    .smalllinks a{color:var(--muted); text-decoration:none}
+    .smalllinks a:hover{color:var(--text)}
+    .hr{height:1px; background:var(--line); margin:18px 0}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <span style="font-size:18px">napisy.ai</span>
+        <span class="badge">beta</span>
+      </div>
+      <nav>
+        <a href="#jakto">Jak to działa</a>
+        <a href="#dlaczego">Dlaczego</a>
+        <a href="#cennik">Cennik</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="btn" href="#kontakt">Wyślij materiał</a>
+    </header>
+
+    <section class="hero">
+      <div>
+        <span class="pill">⚡ Szybko • 🎯 Dokładnie • 📈 Pod SEO</span>
+        <h1>Napisy SRT do wideo<br/>w jakości premium</h1>
+        <p class="sub">
+          Robię napisy do filmów, podcastów i materiałów szkoleniowych.
+          Dostajesz <b>SRT</b>, poprawną interpunkcję, podział na linie i timing —
+          gotowe do wrzucenia na YouTube / platformy.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="#kontakt">Zamów napisy</a>
+          <a class="btn" href="#jakto">Zobacz jak to działa</a>
+        </div>
+
+        <div class="kpi">
+          <div class="mini">
+            <div class="n">99%+</div>
+            <div class="t">jakości bez korekty</div>
+          </div>
+          <div class="mini">
+            <div class="n">SRT</div>
+            <div class="t">formaty eksportu</div>
+          </div>
+          <div class="mini">
+            <div class="n">PL / EN</div>
+            <div class="t">język + znaki</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="h2">Szybka wycena</div>
+        <p class="muted" style="margin:0">
+          Wyślij link (YouTube/Drive) albo plik. Odpiszę z ceną i terminem.
+        </p>
+        <div class="hr"></div>
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <b>Materiał</b>
+            <div class="muted">link lub plik + język</div>
+          </div>
+        </div>
+        <div style="height:10px"></div>
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <b>Napisy</b>
+            <div class="muted">SRT + poprawki</div>
+          </div>
+        </div>
+        <div style="height:10px"></div>
+        <div class="step">
+          <div class="num">3</div>
+          <div>
+            <b>Dostawa</b>
+            <div class="muted">gotowy plik + opcjonalne wersje</div>
+          </div>
+        </div>
+
+        <div class="ctaRow" style="margin-top:16px">
+          <a class="btn primary" href="#kontakt">Wyślij materiał</a>
+          <a class="btn" href="#cennik">Zobacz cennik</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="dlaczego" class="grid3">
+      <div class="card">
+        <div class="h2">📈 SEO i zasięgi</div>
+        <div class="muted">
+          Napisy zwiększają “treść” filmu — lepiej dla wyszukiwarki i widzów (cisza, metro, praca).
+        </div>
+      </div>
+      <div class="card">
+        <div class="h2">🎯 Czytelny timing</div>
+        <div class="muted">
+          Dobre łamanie linii, interpunkcja i spójne segmenty — bez “ściany tekstu”.
+        </div>
+      </div>
+      <div class="card">
+        <div class="h2">⚡ Szybka realizacja</div>
+        <div class="muted">
+          Krótki czas dostawy + możliwość ekspresu (ustalane indywidualnie).
+        </div>
+      </div>
+    </section>
+
+    <section id="jakto" class="card">
+      <div class="h2">Jak to działa</div>
+      <div class="grid3" style="margin:12px 0 0">
+        <div>
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <b>Wysyłasz materiał</b>
+              <div class="muted">link lub plik + język + info o stylu</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <b>Robię napisy</b>
+              <div class="muted">transkrypcja + dopracowany timing</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="step">
+            <div class="num">3</div>
+            <div>
+              <b>Dostarczam SRT</b>
+              <div class="muted">gotowe do wrzucenia na YouTube/Player</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cennik" class="grid3">
+      <div class="card">
+        <div class="h2">Basic</div>
+        <div class="muted">SRT, poprawna interpunkcja, dokładny timing.</div>
+        <div class="price">
+          <div class="big">30 zł</div>
+          <div class="muted">/ 1 godz. nagrania</div>
+        </div>
+        <div class="muted" style="margin-top:10px">
+          Dla prostych materiałów, jedna osoba mówiąca.
+        </div>
+      </div>
+    
+      <div class="card" style="border-color: rgba(124,58,237,.45)">
+        <div class="h2">Pro</div>
+        <div class="muted">Lepsze łamanie linii, styl, nazwy własne.</div>
+        <div class="price">
+          <div class="big">40 zł</div>
+          <div class="muted">/ 1 godz. nagrania</div>
+        </div>
+        <div class="muted" style="margin-top:10px">
+          Najczęstszy wybór pod YouTube i podcasty.
+        </div>
+      </div>
+    
+      <div class="card">
+        <div class="h2">Pro+</div>
+        <div class="muted">Wersja językowa, korekta, ekspres.</div>
+        <div class="price">
+          <div class="big">50 zł</div>
+          <div class="muted">/ 1 godz. nagrania</div>
+        </div>
+        <div class="muted" style="margin-top:10px">
+          Materiały trudne: wiele osób, dynamiczne rozmowy.
+        </div>
+      </div>
+      <div style="margin-top:20px; text-align:center;" class="muted">
+        Cena liczona za długość materiału źródłowego. 
+        Przy większych zleceniach możliwa wycena indywidualna.
+      </div>
+    </section>
+
+    <section id="kontakt" class="card">
+      <div class="h2">Kontakt / zamówienie</div>
+      <p class="muted" style="margin-top:0">
+        Na start najprościej: mail + link do materiału. Formularz dodamy zaraz potem (Pages Functions).
+      </p>
+
+      <div class="grid3" style="margin-top:10px">
+        <div>
+          <b>Email</b><br/>
+          <span class="muted">kamil-ait@pm.me</span>
+        </div>
+        <div>
+          <b>Preferowane</b><br/>
+          <span class="muted">link YouTube/Drive + język + “czy ma być dosłownie”</span>
+        </div>
+        <div>
+          <b>Format</b><br/>
+          <span class="muted">SRT (na życzenie inne)</span>
+        </div>
+      </div>
+
+      <div class="ctaRow" style="margin-top:16px">
+        <a class="btn primary" href="mailto:TU_WSTAW_EMAIL?subject=Napisy.ai%20—%20wycena&body=Cze%C5%9B%C4%87!%0A%0ATu%20link%20do%20materia%C5%82u%3A%20%0A%C4%98zyk%3A%20PL%2FEN%0AD%C5%82ugo%C5%9B%C4%87%3A%20%0AUwagi%3A%20%0A">
+          Napisz maila
+        </a>
+        <a class="btn" href="#jakto">Jak to działa</a>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> napisy.ai — wersja robocza</div>
+      <div class="smalllinks">
+        <a href="#">Polityka prywatności</a>
+        <a href="#">Regulamin</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
