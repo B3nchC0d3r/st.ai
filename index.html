@@ -168,16 +168,21 @@
     }
 
     h1 {
-      font-size: 48px;
+      font-size: 50px;
       line-height: 1.05;
-      margin: 10px 0 12px
+      margin: 10px 0 12px;
+      max-width: 22ch;
+      /* kontroluje łamanie (ładnie, nie na ślepo) */
     }
 
     .sub {
-      font-size: 16px;
+      font-size: 18px;
+      /* było 16px */
       margin: 0;
       color: var(--muted);
-      line-height: 1.65
+      line-height: 1.7;
+      max-width: 70ch;
+      /* czytelność – szerokość tekstu */
     }
 
     .ctaRow {
@@ -294,21 +299,14 @@
         <span style="font-size:18px">napisy.ai</span>
         <span class="badge">beta</span>
       </div>
-      <nav>
-        <a href="#co">Co dostajesz</a>
-        <a href="#jak">Jak to działa</a>
-        <a href="#cennik">Cennik</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-      <a class="btn" href="#kontakt">Kontakt</a>
     </header>
 
     <!-- HERO -->
     <section class="hero" id="top">
       <span class="pill">⚡ Szybko • 🎯 Dokładnie • 📈 Pod SEO</span>
-      <h1>Transkrypcja nagrań<br />i napisy do filmów</h1>
+      <h1>Transkrypcja nagrań i napisy do filmów</h1>
       <p class="sub">
-        Zamień audio lub wideo w czytelny tekst do publikacji oraz profesjonalne napisy SRT
+        Zamieniam audio i wideo w czytelny tekst do publikacji oraz profesjonalne napisy SRT
         z dopracowanym timingiem i łamaniem linii — gotowe do YouTube i playerów.
       </p>
 
